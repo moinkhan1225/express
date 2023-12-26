@@ -25,7 +25,7 @@ next();
 //Fetching Current Time
 
 app.get('/now',((req,res,next)=>{
-const currentTime = `${req.time}`;
+let currentTime = `${req.time}`;
 currentTime=new Date().toString();
 res.send(currentTime);
 next();
