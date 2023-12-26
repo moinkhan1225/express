@@ -44,10 +44,10 @@ app.get('/:word/echo',((req,res)=>{
 }))
 
 app.get('/name',((req,res)=>{
-    let {first,last} = req.query;
+    let {firstname,lastname} = req.query;
     res.json({
-        firstname:first,
-        lastname:last
+        first:firstname,
+        last:lastname
     })
 }))
 app.get('/json',(req,res)=>{
