@@ -16,7 +16,7 @@ res.sendFile(path);
 
 app.use('/public',express.static(absolutePath));
 
-/*app.get('/json',(req,res)=>{
+app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
     }
@@ -24,14 +24,8 @@ app.use('/public',express.static(absolutePath));
     process.env.MESSAGE_STYLE === 'uppercase'?jsonMsg.message=jsonMsg.message.toUpperCase():""
         res.json(jsonMsg)
     
-})*/
-app.get("/json", function (req, res) {
-    let data = { message: "Hello json" };
-    process.env.MESSAGE_STYLE === "uppercase"
-      ? (data.message = data.message.toUpperCase())
-      : "";
-    res.json(data);
-  });
+})
+
 
 
 
