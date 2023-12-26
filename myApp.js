@@ -31,7 +31,9 @@ app.get('/now',((req,res,next)=>{
     req.time = getCurrTime();
     next();
 }), ((req,res)=>{
-res.send(req.time)
+res.send({
+    time:req.time
+})
 }));
 
 app.get('/json',(req,res)=>{
