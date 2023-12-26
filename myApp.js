@@ -9,7 +9,7 @@ app.get('/',(req,res)=>{
 res.sendFile(path);
 })
 
-app.use(absolutePath,express.static(absolutePath))
+app.use('/public',express.static(absolutePath))
 
 
 
