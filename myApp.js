@@ -43,7 +43,7 @@ app.get('/:word/echo',((req,res)=>{
     })
 }))
 
-app.post('/name',((req,res)=>{
+app.get('/name',((req,res)=>{
     let {first,last} = req.query;
     res.json({
         firstname:first,
