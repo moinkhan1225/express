@@ -17,7 +17,7 @@ res.sendFile(path);
 app.use('/public',express.static(absolutePath));
 
 app.use(function(req,res,next){
-const log = `${req.method}${req.path} - ${req.ip}`
+const log = `${req.method} ${req.path} - ${req.ip}`;
 console.log(log);
 next();
 })
