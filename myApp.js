@@ -36,6 +36,13 @@ res.send({
 })
 }));
 
+app.get('/:word/echo',((req,res)=>{
+    let {word} = req.params;
+    res.json({
+    echo:word
+    })
+}))
+
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
