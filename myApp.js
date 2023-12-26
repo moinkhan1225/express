@@ -43,6 +43,12 @@ app.get('/:word/echo',((req,res)=>{
     })
 }))
 
+app.post('/name',((req,res)=>{
+    let fullName = req.query;
+    res.json({
+        name:fullName
+    })
+}))
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
