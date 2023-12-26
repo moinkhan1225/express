@@ -21,6 +21,13 @@ const log = `${req.method} ${req.path} - ${req.ip}`;
 console.log(log);
 next();
 })
+
+//Fetching Current Time
+
+app.get('/now,'((req,res,next)=>{
+const currentTime = `${req.time}`;
+res.send(currentTime);
+}))
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
