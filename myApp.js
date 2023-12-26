@@ -27,6 +27,7 @@ next();
 app.get('/now',((req,res,next)=>{
 const currentTime = `${req.time}`;
 res.send(currentTime);
+next();
 }))
 app.get('/json',(req,res)=>{
     const jsonMsg ={
