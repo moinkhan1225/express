@@ -5,6 +5,8 @@ console.log("Hello World");
 const path = __dirname + '/views/index.html';
 const absolutePath = __dirname + "/public";
 
+const messageStyle = process.env.MESSAGE_STYLE;
+
 app.get('/',(req,res)=>{
 res.sendFile(path);
 })
@@ -12,9 +14,16 @@ res.sendFile(path);
 app.use('/public',express.static(absolutePath));
 
 app.get('/json',(req,res)=>{
-    res.json({
-        "message":"Hello json"
-    })
+    if(messageStyle===uppercase){
+        res.json({
+            "message":"Hello json"
+        })
+    }else{
+        res.json({
+            "message":"HELLO JSON"
+        })
+    }
+    
 })
 
 
