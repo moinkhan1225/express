@@ -9,7 +9,13 @@ app.get('/',(req,res)=>{
 res.sendFile(path);
 })
 
-app.use('/public',express.static(absolutePath))
+app.use('/public',express.static(absolutePath));
+
+app.get('/json',(req,res)=>{
+    res.json({
+        "message":"Hello json"
+    })
+})
 
 
 
