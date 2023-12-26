@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 require('dotenv').config();
+const bodyParser = require('body-parser')
 
 console.log("Hello World");
 
@@ -49,6 +50,10 @@ app.get('/name',((req,res)=>{
         name:`${firstName} ${lastName}`
     })
 }))
+
+app.use(()=>{
+    bodyParser.urlencoded({extended:false})
+})
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
