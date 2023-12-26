@@ -23,8 +23,11 @@ app.get('/json',(req,res)=>{
 
     if(process.env.MESSAGE_STYLE === 'uppercase'){
         jsonMsg.message=jsonMsg.message.toUpperCase()
+        res.json(jsonMsg)
+    }else{
+        res.json(jsonMsg)
     }
-    res.json(jsonMsg)
+    
 })
 
 
