@@ -15,9 +15,9 @@ res.sendFile(path);
 app.use('/public',express.static(absolutePath));
 
 app.get('/json',(req,res)=>{
-    if(messageStyle === 'uppercase'){
+    if(messageStyle == 'uppercase'){
         res.json({
-            "message":"HELLO JSON"
+            "message":"Hello json".toUpperCase();
         })
     }else{
         res.json({
