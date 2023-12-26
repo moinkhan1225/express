@@ -54,6 +54,15 @@ app.get('/name',((req,res)=>{
 app.use(
     bodyParser.urlencoded({extended:false})
 );
+
+//Get Data from POST Requests
+app.post('/name',((req,res)=>{
+let {first:firstName,last:lastName}=req.body;
+res.json({
+    name:`${firstName} ${lastName}`
+})
+}))
+
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
