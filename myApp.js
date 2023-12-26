@@ -23,13 +23,17 @@ next();
 })
 
 //Fetching Current Time
-
+function getCurrTime(){
+    let currentTime=new Date().toString();
+    return currentTime;
+}
 app.get('/now',((req,res,next)=>{
-let currentTime = `${req.time}`;
-currentTime=new Date().toString();
-res.send(currentTime);
-next();
-}))
+    req.time = getCurrTime();
+    next();
+}), ((req,res)=>{
+res.send(req.time)
+}));
+
 app.get('/json',(req,res)=>{
     const jsonMsg ={
         message:"Hello json"
